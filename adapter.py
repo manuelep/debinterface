@@ -14,7 +14,7 @@ class NetworkAdapter:
         'network': {'type': 'IP'},
         'broadcast': {'type': 'IP'},
         'gateway': {'type': 'IP'},
-        'bridge-opts': {'type': dict},
+        'bridgeOpts': {'type': dict},
         'addrFam': {'in': ['inet', 'inet6', 'ipx']},
         'source': {'in': ['dhcp', 'static', 'loopback', 'manual', 'bootp', 'ppp', 'wvdial', 'dynamic', 'ipv4ll', 'v4tunnel']},
         'hostapd': {}
@@ -245,7 +245,7 @@ class NetworkAdapter:
                 for key in options.keys():
                     if key == 'name':
                         self.setName(options[key])
-                    if key == 'addrFam':
+                    elif key == 'addrFam':
                         self.setAddrFam(options[key])
                     elif key == 'source':
                         self.setAddressSource(options[key])

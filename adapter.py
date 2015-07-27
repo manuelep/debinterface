@@ -14,7 +14,7 @@ class NetworkAdapter:
         'network': {'type': 'IP'},
         'broadcast': {'type': 'IP'},
         'gateway': {'type': 'IP'},
-        'bridgeOpts': {'type': dict},
+        'bridge-opts': {'type': dict},
         'addrFam': {'in': ['inet', 'inet6', 'ipx']},
         'source': {'in': ['dhcp', 'static', 'loopback', 'manual', 'bootp', 'ppp', 'wvdial', 'dynamic', 'ipv4ll', 'v4tunnel']},
         'hostapd': {}
@@ -261,9 +261,9 @@ class NetworkAdapter:
                         self.setNetwork(options[key])
                     elif key == 'auto':
                         self.setAuto(options[key])
-                    elif key == 'allow-hotplug':
+                    elif key == 'hotplug':
                         self.setHotplug(options[key])
-                    elif key == 'bridgeOpts':
+                    elif key == 'bridge-opts':
                         self.setBropts(options[key])
                     elif key == 'up':
                         self.setUp(options[key])
